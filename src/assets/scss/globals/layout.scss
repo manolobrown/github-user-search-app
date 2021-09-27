@@ -1,0 +1,49 @@
+@use "../util" as *;
+
+.container {
+  padding: 0 rem(24);
+  max-width: rem(573);
+  margin: 0 auto;
+  width: 100%;
+
+  @include breakpoint(medium) {
+    padding: 0;
+  }
+
+  @include breakpoint(large) {
+    max-width: rem(730);
+    transform: translate(0, 0);
+  }
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: rem(30) 0;
+}
+
+//light mode styles
+.light-mode {
+  background-color: var(--white-gray);
+  .search,
+  .user {
+    background-color: var(--off-white);
+    border-radius: rem(15);
+    box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.19);
+    margin-bottom: rem(15);
+  }
+}
+
+body,
+h1,
+h2,
+h4,
+p {
+  color: var(--light-black);
+}
+h3,
+h3,
+a {
+  color: var(--blue);
+}
