@@ -21,18 +21,20 @@
   flex-wrap: wrap;
   align-items: center;
   padding: rem(30) 0;
+  min-height: 100vh;
 }
 
 //light mode styles
 .light-mode {
   background-color: var(--white-gray);
-  .search,
-  .user {
-    background-color: var(--off-white);
-    border-radius: rem(15);
-    box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.19);
-    margin-bottom: rem(15);
-  }
+}
+
+.search,
+.user {
+  background-color: var(--off-white);
+  border-radius: rem(15);
+  box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.19);
+  margin-bottom: rem(15);
 }
 
 body,
@@ -46,4 +48,13 @@ h3,
 h3,
 a {
   color: var(--blue);
+}
+
+svg,
+svg path {
+  transition: fill 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
 }

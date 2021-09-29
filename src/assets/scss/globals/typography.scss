@@ -27,9 +27,16 @@ input,
   font-family: var(--font-body);
 }
 
-input,
 ::placeholder {
   color: var(--blue-gray);
+}
+
+input {
+  color: var(--light-black);
+  caret-color: var(--blue);
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 h1,

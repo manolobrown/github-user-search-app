@@ -49,6 +49,18 @@ input {
 @include breakpoint(medium) {
   .search {
     padding: rem(10) rem(10) rem(10) rem(32);
+    margin-block-end: rem(20);
+  }
+  input,
+  ::placeholder {
+    font-size: rem(18);
+  }
+  input {
+    margin: 0 rem(24);
+  }
+  .btn--blue {
+    font-size: rem(16);
+    padding: rem(12) rem(24);
   }
 }
 </style>
