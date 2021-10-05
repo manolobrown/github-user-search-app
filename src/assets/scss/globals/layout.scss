@@ -25,15 +25,15 @@
 }
 
 //light mode styles
-.light-mode {
-  background-color: var(--white-gray);
+body {
+  background-color: var(--bkg1);
 }
 
 .search,
 .user {
-  background-color: var(--off-white);
+  background-color: var(--bkg2);
   border-radius: rem(15);
-  box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.19);
+  box-shadow: var(--shadow);
   margin-bottom: rem(15);
 }
 
@@ -42,7 +42,7 @@ h1,
 h2,
 h4,
 p {
-  color: var(--light-black);
+  color: var(--text);
 }
 h3,
 h3,

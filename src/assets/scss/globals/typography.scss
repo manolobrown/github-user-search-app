@@ -28,11 +28,11 @@ input,
 }
 
 ::placeholder {
-  color: var(--blue-gray);
+  color: var(--text2);
 }
 
 input {
-  color: var(--light-black);
+  color: var(--text);
   caret-color: var(--blue);
   &:focus-visible {
     outline: none;

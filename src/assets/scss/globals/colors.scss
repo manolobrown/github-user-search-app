@@ -6,6 +6,7 @@
   --white: #ffffff;
   --off-black: #141d2f;
   --off-blue: #1e2a47;
+  --button-hover: #90a4d4;
 
   //light mode colors
   --gray: #697c9a;
@@ -13,4 +14,49 @@
   --light-black: #2b3442;
   --white-gray: #f6f8ff;
   --off-white: #fefefe;
+  --light-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.19);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: var(--white);
+    --text2: var(--white);
+    --text3: var(--white);
+    --bkg1: var(--off-black);
+    --bkg2: var(--off-blue);
+    --shadow: none;
+    --button: var(--button-hover);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: var(--light-black);
+    --text2: var(--blue-gray);
+    --text3: var(--gray);
+    --bkg1: var(--white-gray);
+    --bkg2: var(--off-white);
+    --shadow: var(--light-shadow);
+    --button: var(--light-black);
+  }
+}
+
+[color-scheme="dark"] {
+  --text: var(--white);
+  --text2: var(--white);
+  --text3: var(--white);
+  --bkg1: var(--off-black);
+  --bkg2: var(--off-blue);
+  --shadow: none;
+  --button: var(--button-hover);
+}
+
+[color-scheme="light"] {
+  --text: var(--light-black);
+  --text2: var(--blue-gray);
+  --text3: var(--gray);
+  --bkg1: var(--white-gray);
+  --bkg2: var(--off-white);
+  --shadow: var(--light-shadow);
+  --button: var(--light-black);
 }
