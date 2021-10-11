@@ -1,15 +1,5 @@
-<script setup>
-import { ref } from "vue";
-
-defineProps({
-  txt: String,
-});
-
-import SearchHeader from "./SearchHeader.vue";
-</script>
-
 <template>
-  <SearchHeader />
+  <SearchHeader @search="getData" />
   <div class="user">
     <header>
       <img src="../assets/icon-octocat.svg" alt="" />
@@ -97,6 +87,7 @@ import SearchHeader from "./SearchHeader.vue";
       </div>
     </footer>
   </div>
+  <span v-if="user !== ''">{{ user.login }}</span>
 </template>
 
 <style scoped lang="scss">
@@ -275,3 +266,31 @@ header {
   }
 }
 </style>
+<script>
+import SearchHeader from "./SearchHeader.vue";
+
+export default {
+  components: {
+    SearchHeader,
+  },
+  data() {
+    return {
+      userDefault: "octocat",
+      user: "",
+    };
+  },
+
+  methods: {
+    async getData(username) {
+      username = username ? username : this.userDefault;
+      const response = await fetch(`https://api.github.com/users/${username}`);
+      const data = await response.json();
+      this.user = data;
+    },
+  },
+
+  async created() {
+    await this.getData();
+  },
+};
+</script>

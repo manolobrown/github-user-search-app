@@ -1,17 +1,14 @@
-<script setup>
-import { ref } from "vue";
-
-defineProps({
-  txt: String,
-});
-</script>
-
 <template>
-  <div class="search">
+  <form @submit="onSearch" class="search">
     <img src="../assets/icon-search.svg" alt="" />
-    <input type="text" placeholder="Search GitHub username&hellip;" />
-    <button class="btn btn--blue">Search</button>
-  </div>
+    <input
+      v-model="searchValue"
+      type="text"
+      name="user"
+      placeholder="Search GitHub username&hellip;"
+    />
+    <button type="submit" class="btn btn--blue">Search</button>
+  </form>
 </template>
 
 <style scoped lang="scss">
@@ -64,3 +61,43 @@ input {
   }
 }
 </style>
+
+<script>
+export default {
+  name: "SearchHeader",
+  props: {
+    value: {
+      type: String,
+      default: "",
+    },
+  },
+  data() {
+    return {
+      localValue: this.value,
+    };
+  },
+  computed: {
+    searchValue: {
+      get() {
+        return this.isValuePropSet() ? this.value : this.localValue;
+      },
+      set(value) {
+        this.$emit("input", value);
+        this.localValue = value;
+      },
+    },
+  },
+  methods: {
+    onSearch(e) {
+      e.preventDefault();
+
+      this.$emit("search", this.searchValue);
+    },
+    isValuePropSet() {
+      return (
+        !!this.$options.propsData && this.$options.propsData.value !== undefined
+      );
+    },
+  },
+};
+</script>
