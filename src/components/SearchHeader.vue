@@ -7,6 +7,7 @@
       name="user"
       placeholder="Search GitHub username&hellip;"
     />
+    <div class="no-results"></div>
     <button type="submit" class="btn btn--blue">Search</button>
   </form>
 </template>
@@ -43,6 +44,12 @@ input {
   overflow: hidden;
 }
 
+.no-results {
+  color: #f74646;
+  margin-right: rem(10);
+  font-size: rem(14);
+}
+
 @include breakpoint(medium) {
   .search {
     padding: rem(10) rem(10) rem(10) rem(32);
@@ -58,6 +65,11 @@ input {
   .btn--blue {
     font-size: rem(16);
     padding: rem(12) rem(24);
+  }
+
+  .no-results {
+    margin-right: rem(25);
+    font-size: rem(16);
   }
 }
 </style>
